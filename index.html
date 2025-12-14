@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draconi Cheats 🐉 - Cheats para Free Fire</title>
+    <title>Draconi Cheats 🐉 - A loja líder em cheats do Free Fire!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #ff0000;
+            --secondary: #00ff00;
+            --dark: #0a0a0a;
+            --darker: #050505;
+            --light: #ffffff;
+            --gray: #1a1a1a;
+            --gray-light: #2a2a2a;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        :root {
-            --primary-color: #ff0000;
-            --secondary-color: #1a1a1a;
-            --accent-color: #ff9900;
-            --light-color: #f5f5f5;
-            --dark-color: #0a0a0a;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
-            background-color: #0a0a0a;
-            color: #fff;
-            line-height: 1.6;
+            background-color: var(--darker);
+            color: var(--light);
             overflow-x: hidden;
         }
         
@@ -32,95 +34,123 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
         /* Header e Navegação */
         header {
-            background: linear-gradient(135deg, var(--secondary-color), var(--dark-color));
+            background-color: rgba(10, 10, 10, 0.95);
             padding: 20px 0;
-            border-bottom: 3px solid var(--primary-color);
-            position: sticky;
-            top: 0;
+            position: fixed;
+            width: 100%;
             z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 10px;
-        }
-        
-        .logo h1 {
-            font-size: 2.2rem;
-            color: var(--primary-color);
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
         }
         
-        .logo span {
-            color: var(--accent-color);
+        .logo .dragon {
+            font-size: 2rem;
+            animation: dragon-fire 3s infinite;
         }
         
-        .dragon-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            animation: dragonPulse 2s infinite alternate;
-        }
-        
-        @keyframes dragonPulse {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
+        @keyframes dragon-fire {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
         
         nav ul {
             display: flex;
-            gap: 25px;
             list-style: none;
+            gap: 30px;
         }
         
         nav a {
-            color: #fff;
+            color: var(--light);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 1.1rem;
             transition: color 0.3s;
-            padding: 5px 10px;
-            border-radius: 4px;
+            position: relative;
         }
         
         nav a:hover {
-            color: var(--accent-color);
-            background-color: rgba(255, 153, 0, 0.1);
+            color: var(--primary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Banner Promocional */
+        .promo-banner {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.9), rgba(0, 255, 0, 0.7));
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 80px;
+            animation: pulse-banner 2s infinite alternate;
+        }
+        
+        @keyframes pulse-banner {
+            0% { background: linear-gradient(135deg, rgba(255, 0, 0, 0.9), rgba(0, 255, 0, 0.7)); }
+            100% { background: linear-gradient(135deg, rgba(255, 0, 0, 0.7), rgba(0, 255, 0, 0.9)); }
+        }
+        
+        .promo-banner h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 80px 0;
+            padding: 80px 0 60px;
             text-align: center;
-            border-bottom: 2px solid var(--primary-color);
+            background: radial-gradient(circle at center, rgba(255, 0, 0, 0.1), transparent 70%);
         }
         
-        .hero h2 {
-            font-size: 3rem;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 20px;
-            color: #fff;
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            color: #ccc;
             max-width: 800px;
             margin: 0 auto 30px;
-            color: #ddd;
-        }
-        
-        .highlight {
-            color: var(--accent-color);
-            font-weight: bold;
+            line-height: 1.6;
         }
         
         /* Produtos */
@@ -131,8 +161,8 @@
         .section-title {
             text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--primary-color);
+            margin-bottom: 50px;
+            color: var(--light);
             position: relative;
         }
         
@@ -141,114 +171,234 @@
             position: absolute;
             width: 100px;
             height: 4px;
-            background-color: var(--accent-color);
-            bottom: -10px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 2px;
         }
         
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
         
         .product-card {
-            background-color: var(--secondary-color);
-            border-radius: 10px;
+            background-color: var(--gray);
+            border-radius: 15px;
             overflow: hidden;
-            border: 2px solid #333;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
         }
         
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
-            border-color: var(--primary-color);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 2;
         }
         
         .product-header {
-            padding: 20px;
-            background-color: #222;
-            border-bottom: 2px solid #333;
+            padding: 25px 25px 15px;
+            background-color: var(--gray-light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .product-title {
             font-size: 1.5rem;
-            color: var(--accent-color);
+            font-weight: 700;
+            color: var(--light);
             margin-bottom: 10px;
         }
         
         .product-description {
-            color: #bbb;
-            font-size: 0.9rem;
-            min-height: 60px;
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
         
         .product-body {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 20px 25px 25px;
         }
         
         .product-price {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        
-        .quantity-selector {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            gap: 15px;
+            margin-bottom: 25px;
         }
         
-        .quantity-btn {
-            background-color: #333;
+        .current-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+        
+        .original-price {
+            font-size: 1.4rem;
+            color: #888;
+            text-decoration: line-through;
+        }
+        
+        .buy-button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(to right, var(--primary), #cc0000);
             color: white;
             border: none;
-            width: 40px;
-            height: 40px;
+            padding: 18px;
             font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .quantity-btn:hover {
-            background-color: var(--primary-color);
+        .buy-button:hover {
+            background: linear-gradient(to right, #cc0000, var(--primary));
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
         }
         
-        .quantity-input {
-            width: 60px;
-            height: 40px;
+        /* Garantia */
+        .guarantee {
+            background-color: var(--gray);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
             text-align: center;
-            border: none;
-            background-color: #222;
-            color: white;
-            font-size: 1.1rem;
-            margin: 0 5px;
         }
         
-        .buy-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
+        .guarantee-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .guarantee-description {
+            color: #ccc;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        
+        .guarantee-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+        
+        .feature-text {
+            font-weight: 600;
+            color: var(--light);
+        }
+        
+        /* FAQ */
+        .faq-section {
+            padding: 60px 0;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 25px;
+        }
+        
+        .faq-item {
+            background-color: var(--gray);
+            border-radius: 10px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            background-color: var(--gray-light);
+        }
+        
+        .faq-question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faq-answer {
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            padding: 50px 0 30px;
+            border-top: 2px solid var(--primary);
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-text {
+            color: #aaa;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .footer-warning {
+            background-color: rgba(255, 0, 0, 0.1);
+            border-left: 4px solid var(--primary);
             padding: 15px;
-            font-size: 1.1rem;
-            font-weight: bold;
+            margin-top: 30px;
             border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: auto;
-        }
-        
-        .buy-btn:hover {
-            background-color: #cc0000;
+            max-width: 800px;
         }
         
         /* Modal de Pagamento */
@@ -259,47 +409,53 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.9);
             z-index: 2000;
             justify-content: center;
             align-items: center;
         }
         
         .modal-content {
-            background-color: var(--secondary-color);
+            background-color: var(--gray);
             width: 90%;
             max-width: 500px;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            border: 3px solid var(--primary-color);
-            animation: modalAppear 0.3s;
+            border: 2px solid var(--primary);
+            animation: modal-appear 0.3s;
         }
         
-        @keyframes modalAppear {
+        @keyframes modal-appear {
             from { transform: scale(0.8); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
         
         .modal-header {
-            background-color: #222;
+            background-color: var(--gray-light);
             padding: 20px;
-            border-bottom: 2px solid #333;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .modal-title {
             font-size: 1.5rem;
-            color: var(--accent-color);
+            font-weight: 700;
+            color: var(--light);
         }
         
         .close-modal {
             background: none;
             border: none;
-            color: #fff;
-            font-size: 1.5rem;
+            color: var(--light);
+            font-size: 1.8rem;
             cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary);
         }
         
         .modal-body {
@@ -307,27 +463,29 @@
         }
         
         .pix-info {
-            background-color: #222;
+            background-color: rgba(0, 255, 0, 0.1);
+            border: 1px solid var(--secondary);
             padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
             text-align: center;
         }
         
         .pix-key {
             font-family: monospace;
-            background-color: #111;
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 8px;
             word-break: break-all;
             margin: 15px 0;
-            font-size: 1.1rem;
-            color: var(--accent-color);
+            font-size: 1rem;
+            color: var(--secondary);
         }
         
         .account-name {
             font-size: 1.2rem;
-            color: var(--accent-color);
+            font-weight: 600;
+            color: var(--secondary);
             margin-bottom: 10px;
         }
         
@@ -335,17 +493,22 @@
             display: flex;
             gap: 15px;
             justify-content: center;
+            margin-top: 25px;
+        }
+        
+        .cancel-btn, .confirm-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
         }
         
         .cancel-btn {
             background-color: #555;
             color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
         
         .cancel-btn:hover {
@@ -353,102 +516,74 @@
         }
         
         .confirm-btn {
-            background-color: #00aa00;
+            background: linear-gradient(to right, var(--primary), #cc0000);
             color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
         
         .confirm-btn:hover {
-            background-color: #008800;
-        }
-        
-        .support-info {
-            margin-top: 25px;
-            padding: 15px;
-            background-color: #222;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #ddd;
-        }
-        
-        .support-info a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        
-        .support-number {
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            padding: 40px 0;
-            border-top: 2px solid var(--primary-color);
-            text-align: center;
-        }
-        
-        .footer-logo {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .footer-text {
-            color: #aaa;
-            max-width: 600px;
-            margin: 0 auto 20px;
-        }
-        
-        .warning {
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 0.9rem;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: rgba(255, 153, 0, 0.1);
-            border-radius: 5px;
+            background: linear-gradient(to right, #cc0000, var(--primary));
         }
         
         /* Responsividade */
-        @media (max-width: 768px) {
-            .hero h2 {
-                font-size: 2.2rem;
+        @media (max-width: 992px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
             }
             
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
             }
             
             nav ul {
+                gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;
+            }
+            
+            .promo-banner h2 {
+                font-size: 1.4rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
             }
             
             .modal-buttons {
                 flex-direction: column;
             }
+            
+            .guarantee-features {
+                flex-direction: column;
+                gap: 25px;
+            }
         }
         
         @media (max-width: 480px) {
-            .hero {
-                padding: 50px 0;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
+            .hero h1 {
+                font-size: 1.9rem;
             }
             
             .section-title {
                 font-size: 2rem;
+            }
+            
+            .product-title {
+                font-size: 1.3rem;
+            }
+            
+            .current-price {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -457,36 +592,94 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <div class="logo">
-                <div class="dragon-icon">🐉</div>
-                <h1>Draconi <span>Cheats</span></h1>
+            <div class="header-content">
+                <div class="logo">
+                    <span class="dragon">🐉</span>
+                    <span>Draconi Cheats</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#products">Produtos</a></li>
+                        <li><a href="#guarantee">Garantia</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#support">Suporte</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#products">Produtos</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#contact">Suporte</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
+    
+    <!-- Banner Promocional -->
+    <div class="promo-banner">
+        <div class="container">
+            <h2>MAIOR PROMOÇÃO DE CHEATS SÓ HOJE!</h2>
+        </div>
+    </div>
     
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h2>SEJA BEM VINDO (A) A DRACONI CHEATS</h2>
-            <p>Uma loja focada em cheats de Free Fire, 100% confiável e suporte 24h por dia, cheats baratos e 100% capa🔥💯</p>
-            <p class="highlight">PRODUTOS 👑 PAINEL HEADRICK ⚠️ GERADOR SENSI 📲 HS PESCOÇO 👌 HS PEITO ❤️ HS CABEÇA 🗣️ FFH4X ☠️💉 CRIE SEU PRÓPRIO CHEAT/PAINEL 🏳️ LIBERAR TODAS SKIN 💯</p>
+            <h1>A loja líder em venda de cheats do Free Fire!</h1>
+            <p>SEJA BEM VINDO (A) A DRACONI CHEATS. Uma loja focada em cheats de Free Fire, 100% confiável e suporte 24h por dia, cheats baratos e 100% capa🔥💯</p>
+            <p style="color: var(--secondary); font-weight: 600; margin-top: 20px;">PRODUTOS 👑 PAINEL HEADRICK ⚠️ GERADOR SENSI 📲 HS PESCOÇO 👌 HS PEITO ❤️ HS CABEÇA 🗣️ FFH4X ☠️💉 CRIE SEU PRÓPRIO CHEAT/PAINEL 🏳️ LIBERAR TODAS SKIN 💯</p>
         </div>
     </section>
     
     <!-- Produtos -->
     <section class="products-section" id="products">
         <div class="container">
-            <h2 class="section-title">Nossos Produtos</h2>
+            <h2 class="section-title">ESCOLHA AGORA!</h2>
             <div class="products-grid" id="products-grid">
-                <!-- Produtos serão gerados via JavaScript -->
+                <!-- Produtos serão inseridos via JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Garantia -->
+    <section class="guarantee" id="guarantee">
+        <div class="container">
+            <h2 class="guarantee-title">GARANTIA DE REEMBOLSO</h2>
+            <p class="guarantee-description">Caso o produto não funcione ou você não goste, nós devolveremos 100% do seu dinheiro. Sua satisfação é nossa prioridade!</p>
+            
+            <div class="guarantee-features">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="feature-text">Compra Segura</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <div class="feature-text">Suporte 24h</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="feature-text">Entrega Imediata</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">PERGUNTAS FREQUENTES</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-question-circle"></i> O produto é antiban?</div>
+                    <div class="faq-answer">Sim! Nossos produtos contam com tecnologia antiban de última geração, garantindo a segurança da sua conta.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-mobile-alt"></i> Funciona em qual dispositivo?</div>
+                    <div class="faq-answer">Nossos cheats são desenvolvidos para funcionar em dispositivos Android. Temos versões específicas para diferentes configurações.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-shipping-fast"></i> Como recebo o produto?</div>
+                    <div class="faq-answer">A entrega é automática e imediata após a confirmação do pagamento. Você receberá o acesso por e-mail ou diretamente em sua conta.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question"><i class="fas fa-comments"></i> Tem suporte?</div>
+                    <div class="faq-answer">Sim, oferecemos suporte 24 horas por dia através do nosso WhatsApp para tirar todas as suas dúvidas e ajudar com problemas.</div>
+                </div>
             </div>
         </div>
     </section>
@@ -503,11 +696,11 @@
                     <p>Para finalizar sua compra, utilize a seguinte chave PIX:</p>
                     <div class="pix-key" id="pixKey">Gerando chave PIX...</div>
                     <div class="account-name" id="accountName"></div>
-                    <p>Valor total: <strong id="totalAmount">R$ 0,00</strong></p>
+                    <p>Valor total: <strong id="totalAmount" style="color: var(--secondary);">R$ 0,00</strong></p>
                 </div>
                 
-                <div class="support-info" id="supportInfo">
-                    <!-- As informações de suporte serão preenchidas via JavaScript -->
+                <div id="supportInfo" style="background-color: rgba(255, 0, 0, 0.1); padding: 15px; border-radius: 8px; margin-top: 20px;">
+                    <!-- Informações de suporte serão preenchidas via JavaScript -->
                 </div>
                 
                 <div class="modal-buttons">
@@ -519,80 +712,93 @@
     </div>
     
     <!-- Footer -->
-    <footer id="contact">
+    <footer id="support">
         <div class="container">
-            <div class="footer-logo">Draconi Cheats 🐉</div>
-            <p class="footer-text">OBRIGADO POR COMPRAR 🙏</p>
-            <p class="footer-text">Suporte 24h por dia via WhatsApp: +55 54 99107-9543</p>
-            <p class="warning">AVISO: Este site é apenas para fins educacionais. Não incentivamos o uso de cheats em jogos online, pois pode violar os termos de serviço e resultar em banimento da sua conta.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span>🐉</span>
+                    <span>Draconi Cheats</span>
+                </div>
+                <p class="footer-text">OBRIGADO POR COMPRAR 🙏<br>Suporte 24h por dia via WhatsApp: +55 54 99107-9543</p>
+                <p class="footer-warning">AVISO: Este site é apenas para fins educacionais. Não incentivamos o uso de cheats em jogos online, pois pode violar os termos de serviço e resultar em banimento da sua conta.</p>
+            </div>
         </div>
     </footer>
     
     <script>
-        // Dados dos produtos
+        // Dados dos produtos da Draconi Cheats
         const products = [
             {
                 id: 1,
-                name: "LIBERAR TODAS AS SKINS",
-                description: "Desbloqueie todas as skins do Free Fire para sua conta.",
-                price: 40.00,
-                type: "skin"
+                name: "PAINEL HEADRICK",
+                description: "Painel completo Headrick com múltiplos recursos para Free Fire.",
+                currentPrice: 15.80,
+                originalPrice: 31.60,
+                badge: "VIP"
             },
             {
                 id: 2,
-                name: "CRIE SEU PRÓPRIO PAINEL/CHEAT",
-                description: "Crie seu próprio painel de cheats personalizado para Free Fire.",
-                price: 150.00,
-                type: "painel"
+                name: "GERADOR SENSI",
+                description: "Gerador de sensibilidade perfeita para Free Fire.",
+                currentPrice: 5.99,
+                originalPrice: 11.98,
+                badge: "VIP"
             },
             {
                 id: 3,
-                name: "FFH4X PERM",
-                description: "Cheat FFH4X com acesso permanente. Recursos avançados.",
-                price: 80.00,
-                type: "cheat"
+                name: "HS PESCOÇO",
+                description: "Aimbot para headshot automático (pescoço).",
+                currentPrice: 29.99,
+                originalPrice: 59.98,
+                badge: "VIP"
             },
             {
                 id: 4,
-                name: "FFH4X 7 DIAS",
-                description: "Cheat FFH4X com acesso por 7 dias. Versão de teste.",
-                price: 35.00,
-                type: "cheat"
+                name: "HS PEITO",
+                description: "Aimbot para headshot automático (peito).",
+                currentPrice: 38.90,
+                originalPrice: 77.80,
+                badge: "VIP"
             },
             {
                 id: 5,
                 name: "HS CABEÇA",
                 description: "Aimbot para headshot automático (cabeça).",
-                price: 25.00,
-                type: "hs"
+                currentPrice: 25.00,
+                originalPrice: 50.00,
+                badge: "VIP"
             },
             {
                 id: 6,
-                name: "HS PESCOÇO",
-                description: "Aimbot para headshot automático (pescoço).",
-                price: 29.99,
-                type: "hs"
+                name: "FFH4X PERM",
+                description: "Cheat FFH4X com acesso permanente. Recursos avançados.",
+                currentPrice: 80.00,
+                originalPrice: 160.00,
+                badge: "VIP"
             },
             {
                 id: 7,
-                name: "HS PEITO",
-                description: "Aimbot para headshot automático (peito).",
-                price: 38.90,
-                type: "hs"
+                name: "FFH4X 7 DIAS",
+                description: "Cheat FFH4X com acesso por 7 dias. Versão de teste.",
+                currentPrice: 35.00,
+                originalPrice: 70.00,
+                badge: "VIP"
             },
             {
                 id: 8,
-                name: "GERADOR DE SENSI",
-                description: "Gerador de sensibilidade perfeita para Free Fire.",
-                price: 5.99,
-                type: "gerador"
+                name: "LIBERAR TODAS AS SKINS",
+                description: "Desbloqueie todas as skins do Free Fire para sua conta.",
+                currentPrice: 40.00,
+                originalPrice: 80.00,
+                badge: "VIP"
             },
             {
                 id: 9,
-                name: "PAINEL HEADRICK",
-                description: "Painel Headrick completo com múltiplos recursos.",
-                price: 15.80,
-                type: "painel"
+                name: "CRIE SEU PRÓPRIO CHEAT/PAINEL",
+                description: "Crie seu próprio painel de cheats personalizado para Free Fire.",
+                currentPrice: 150.00,
+                originalPrice: 300.00,
+                badge: "VIP"
             }
         ];
         
@@ -617,6 +823,26 @@
         document.addEventListener('DOMContentLoaded', function() {
             renderProducts();
             setupEventListeners();
+            
+            // Adicionar quantidade aos produtos
+            document.querySelectorAll('.product-card').forEach(card => {
+                const quantityContainer = document.createElement('div');
+                quantityContainer.className = 'quantity-selector';
+                quantityContainer.style.display = 'flex';
+                quantityContainer.style.alignItems = 'center';
+                quantityContainer.style.gap = '10px';
+                quantityContainer.style.marginTop = '15px';
+                
+                quantityContainer.innerHTML = `
+                    <button class="quantity-btn minus" style="background: #333; color: white; border: none; width: 35px; height: 35px; border-radius: 5px; cursor: pointer;">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1" style="width: 60px; text-align: center; background: #222; color: white; border: none; border-radius: 5px; height: 35px;">
+                    <button class="quantity-btn plus" style="background: #333; color: white; border: none; width: 35px; height: 35px; border-radius: 5px; cursor: pointer;">+</button>
+                `;
+                
+                const productBody = card.querySelector('.product-body');
+                const buyButton = card.querySelector('.buy-button');
+                productBody.insertBefore(quantityContainer, buyButton);
+            });
         });
         
         // Renderizar produtos na página
@@ -628,18 +854,17 @@
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
                 productCard.innerHTML = `
+                    <div class="product-badge">${product.badge}</div>
                     <div class="product-header">
                         <h3 class="product-title">${product.name}</h3>
                         <p class="product-description">${product.description}</p>
                     </div>
                     <div class="product-body">
-                        <div class="product-price">R$ ${product.price.toFixed(2).replace('.', ',')}</div>
-                        <div class="quantity-selector">
-                            <button class="quantity-btn minus" data-id="${product.id}">-</button>
-                            <input type="number" class="quantity-input" data-id="${product.id}" value="1" min="1">
-                            <button class="quantity-btn plus" data-id="${product.id}">+</button>
+                        <div class="product-price">
+                            <div class="current-price">R$ ${product.currentPrice.toFixed(2).replace('.', ',')}</div>
+                            <div class="original-price">R$ ${product.originalPrice.toFixed(2).replace('.', ',')}</div>
                         </div>
-                        <button class="buy-btn" data-id="${product.id}">Comprar Agora</button>
+                        <button class="buy-button" data-id="${product.id}">Comprar Agora</button>
                     </div>
                 `;
                 
@@ -652,8 +877,8 @@
             // Botões de quantidade
             document.addEventListener('click', function(e) {
                 if (e.target.classList.contains('quantity-btn')) {
-                    const productId = parseInt(e.target.getAttribute('data-id'));
-                    const input = document.querySelector(`.quantity-input[data-id="${productId}"]`);
+                    const productCard = e.target.closest('.product-card');
+                    const input = productCard.querySelector('.quantity-input');
                     let value = parseInt(input.value);
                     
                     if (e.target.classList.contains('plus')) {
@@ -666,9 +891,10 @@
                 }
                 
                 // Botões de compra
-                if (e.target.classList.contains('buy-btn')) {
+                if (e.target.classList.contains('buy-button')) {
                     const productId = parseInt(e.target.getAttribute('data-id'));
-                    const input = document.querySelector(`.quantity-input[data-id="${productId}"]`);
+                    const productCard = e.target.closest('.product-card');
+                    const input = productCard.querySelector('.quantity-input');
                     const quantity = parseInt(input.value);
                     
                     addToCart(productId, quantity);
@@ -689,6 +915,23 @@
                     closePaymentModal();
                 }
             });
+            
+            // Smooth scroll para links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         }
         
         // Adicionar produto ao carrinho
@@ -697,9 +940,9 @@
             cart = {
                 productId: productId,
                 productName: product.name,
-                unitPrice: product.price,
+                unitPrice: product.currentPrice,
                 quantity: quantity,
-                totalPrice: product.price * quantity
+                totalPrice: product.currentPrice * quantity
             };
         }
         
@@ -717,9 +960,9 @@
             // Atualizar informações de suporte
             const supportInfo = document.getElementById('supportInfo');
             supportInfo.innerHTML = `
-                <p>Após realizar o pagamento, <strong>entre em contato com nosso suporte</strong> enviando o comprovante para:</p>
-                <p class="support-number">${selectedPixKey.supportNumber}</p>
-                <p>Informe o produto comprado: <strong>${cart.productName}</strong></p>
+                <p style="margin-bottom: 10px;"><strong>Após realizar o pagamento, entre em contato com nosso suporte enviando o comprovante para:</strong></p>
+                <p style="color: var(--secondary); font-weight: 700; font-size: 1.1rem;">${selectedPixKey.supportNumber}</p>
+                <p style="margin-top: 10px;">Informe o produto comprado: <strong>${cart.productName}</strong></p>
                 <p>Quantidade: <strong>${cart.quantity}</strong></p>
                 <p>Valor total: <strong>R$ ${cart.totalPrice.toFixed(2).replace('.', ',')}</strong></p>
             `;
@@ -739,6 +982,31 @@
             alert('Obrigado pela compra! Entre em contato com nosso suporte para enviar o comprovante.');
             closePaymentModal();
         }
+        
+        // Animar elementos ao rolar a página
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.product-card, .faq-item, .feature');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Inicializar animações
+        document.querySelectorAll('.product-card, .faq-item, .feature').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s, transform 0.5s';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Executar uma vez ao carregar
     </script>
 </body>
 </html>
